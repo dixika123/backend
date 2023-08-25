@@ -43,7 +43,7 @@ router.post('/create', async (req, res) => {
 
 
 // get order by user id
-router.get('/myorders', authGuard, async (req, res) => {
+router.get('/myorders', async (req, res) => {
     try {
 
         const orders = await orderModal.find({user: req.user.id}).sort({orderedDate: -1});
